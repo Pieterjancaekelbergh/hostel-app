@@ -17,8 +17,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">Travel</span>
                         </div>
@@ -53,8 +53,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">Tourist Guide</span>
                         </div>
@@ -89,8 +89,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">City Sights</span>
                         </div>
@@ -125,8 +125,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">Tourist Guide</span>
                         </div>
@@ -161,8 +161,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">Tourist Guide</span>
                         </div>
@@ -197,8 +197,8 @@
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                             <span class="media_label">Communication</span>
                         </div>
@@ -278,8 +278,8 @@
                     <li class="list-item d-flex align-items-center">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </div>
                         <div class="main d-flex flex-column">
@@ -290,8 +290,8 @@
                     <li class="list-item d-flex align-items-center">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </div>
                         <div class="main d-flex flex-column">
@@ -302,8 +302,8 @@
                     <li class="list-item d-flex align-items-center">
                         <div class="media">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </div>
                         <div class="main d-flex flex-column">
@@ -354,48 +354,48 @@
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
                     <li class="list-item">
                         <a href="#" target="_blank" rel="noopener noreferrer">
                             <picture>
-                                <source data-srcset="img/placeholder.jpg" srcset="img/placeholder.jpg" />
-                                <img class="lazy" data-src="img/placeholder.jpg" src="img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
+                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
                             </picture>
                         </a>
                     </li>
