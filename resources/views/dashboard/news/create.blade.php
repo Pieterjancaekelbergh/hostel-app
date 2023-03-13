@@ -1,4 +1,4 @@
-<form action="{{ route('dashboard.create') }}" method="POST">
+<form action="{{ route('dashboard.posts.create') }}" method="POST">
 
     <p>
         <label for="title">Title</label>
