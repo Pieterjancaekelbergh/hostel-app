@@ -51,7 +51,7 @@
                 </li>
                 @endforeach
             </ul>
-            <div class="d-flex justify-content-center">
+            <div>
                 {!! $posts->links() !!}
             </div>
             {{-- <ul class="pagination d-flex align-items-center">

@@ -41,14 +41,13 @@ class NewsController extends Controller
             'url' => '/news',
             'active' => true
         ]            
-    ];
+      ];
 
-        $dummyData = [
-            'title' => "News Title $slug",
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-        ];
+      // get post from slug
+      $post = Post::where('slug', $slug)->first();
+      
 
-        return view('news.show', compact('dummyData', 'menuItems'));
+      return view('news.show', compact('post', 'menuItems'));
     }
 
 }

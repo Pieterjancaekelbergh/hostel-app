@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="post_main-article_text">
-                        {{ $post->content }}
+                        {!! $post->content !!}
                     </div>
                 </div>
                 <div class="post_main-footer">
