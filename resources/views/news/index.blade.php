@@ -13,7 +13,7 @@
         <div class="news">
             <!-- news list start -->
             <ul class="news_list">
-                @foreach ($newsItems as $newsItem)
+                @foreach ($posts as $post)
                 <li class="news_list-item">
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
@@ -24,11 +24,11 @@
                             <span class="media_label">Travel</span>
                         </div>
                         <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="{{ route('news.show', $newsItem['slug']) }}" data-shave="true">
-                                {{ $newsItem['title'] }}
+                            <a class="main_title h4" href="{{ route('news.show', $post->slug) }}" data-shave="true">
+                                {{ $post->title }}
                             </a>
                             <p class="main_preview">
-                                {{ $newsItem['content'] }}
+                                {{ $post->intro }}
                             </p>
                             <div class="main_metadata">
                                 <span class="main_metadata-item d-inline-flex align-items-center">
@@ -51,7 +51,10 @@
                 </li>
                 @endforeach
             </ul>
-            <ul class="pagination d-flex align-items-center">
+            <div class="d-flex justify-content-center">
+                {!! $posts->links() !!}
+            </div>
+            {{-- <ul class="pagination d-flex align-items-center">
                 <li class="pagination-page">
                     <a class="pagination-page_link d-flex align-items-center justify-content-center" href="#" data-current="true"
                         >1</a
@@ -63,7 +66,7 @@
                 <li class="pagination-page">
                     <a class="pagination-page_link d-flex align-items-center justify-content-center" href="#">3</a>
                 </li>
-            </ul>
+            </ul> --}}
             <!-- news list end -->
         </div>
         <!-- news aside start -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -9,26 +10,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        $newsItems = [
-          [
-            'id' => 1,
-            'title'=> 'New website',
-            'slug' => 'new-website',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-          ],
-          [
-            'id' => 2,
-            'title'=> 'Promotions on our luxury bedroom',
-            'slug' => 'promotions-on-bedroom',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-          ],
-          [
-            'id' => 3,
-            'title'=> 'Checkout our swimming pool, it is awesome and full of fishes', 
-            'slug' => 'fishy-pool',
-            'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
-          ],
-        ];
+      $posts = Post::paginate(10); // SELECT * FROM posts
 
         $menuItems = [
             [
@@ -43,9 +25,7 @@ class NewsController extends Controller
             ]            
         ];
 
-
-
-        return view('news.index', compact('newsItems', 'menuItems'));
+        return view('news.index', compact('posts', 'menuItems'));
     }
 
     public function show($slug)
