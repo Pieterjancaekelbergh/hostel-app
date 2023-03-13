@@ -12,19 +12,19 @@ class NewsController extends Controller
         $newsItems = [
           [
             'id' => 1,
-            'title '=> 'New website',
+            'title'=> 'New website',
             'slug' => 'new-website',
             'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
           ],
           [
             'id' => 2,
-            'title '=> 'Promotions on our luxury bedroom',
+            'title'=> 'Promotions on our luxury bedroom',
             'slug' => 'promotions-on-bedroom',
             'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
           ],
           [
             'id' => 3,
-            'title '=> 'Checkout our swimming pool, it is awesome and full of fishes', 
+            'title'=> 'Checkout our swimming pool, it is awesome and full of fishes', 
             'slug' => 'fishy-pool',
             'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
           ],

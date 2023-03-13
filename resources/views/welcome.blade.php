@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel - Hosteller</title>
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
     <h1><?php echo $title; ?></h1>

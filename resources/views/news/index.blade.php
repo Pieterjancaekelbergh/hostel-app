@@ -13,6 +13,7 @@
         <div class="news">
             <!-- news list start -->
             <ul class="news_list">
+                @foreach ($newsItems as $newsItem)
                 <li class="news_list-item">
                     <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
                         <div class="media">
@@ -23,84 +24,11 @@
                             <span class="media_label">Travel</span>
                         </div>
                         <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >How to Travel the World & Make a Difference</a
-                            >
-                            <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
-                            </p>
-                            <div class="main_metadata">
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-calendar icon"></i>
-                                    June 16, 2021
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-eye icon"></i>
-                                    <span class="number">120</span>
-                                    <span class="text">views</span>
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-comment icon"></i>
-                                    <span class="number">1</span>
-                                    <span class="text">Comment</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="news_list-item">
-                    <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
-                        <div class="media">
-                            <picture>
-                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                            </picture>
-                            <span class="media_label">Tourist Guide</span>
-                        </div>
-                        <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >The Seven People You Always Meet Hosteling</a
-                            >
-                            <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
-                            </p>
-                            <div class="main_metadata">
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-calendar icon"></i>
-                                    June 16, 2021
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-eye icon"></i>
-                                    <span class="number">120</span>
-                                    <span class="text">views</span>
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-comment icon"></i>
-                                    <span class="number">1</span>
-                                    <span class="text">Comment</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="news_list-item">
-                    <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
-                        <div class="media">
-                            <picture>
-                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                            </picture>
-                            <span class="media_label">City Sights</span>
-                        </div>
-                        <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >10 of the Most Underrated Cities in Europe
+                            <a class="main_title h4" href="{{ route('news.show', $newsItem['slug']) }}" data-shave="true">
+                                {{ $newsItem['title'] }}
                             </a>
                             <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
+                                {{ $newsItem['content'] }}
                             </p>
                             <div class="main_metadata">
                                 <span class="main_metadata-item d-inline-flex align-items-center">
@@ -121,114 +49,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="news_list-item">
-                    <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
-                        <div class="media">
-                            <picture>
-                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                            </picture>
-                            <span class="media_label">Tourist Guide</span>
-                        </div>
-                        <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >Things Hostels Do Better than Posh Hotels</a
-                            >
-                            <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
-                            </p>
-                            <div class="main_metadata">
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-calendar icon"></i>
-                                    June 16, 2021
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-eye icon"></i>
-                                    <span class="number">120</span>
-                                    <span class="text">views</span>
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-comment icon"></i>
-                                    <span class="number">1</span>
-                                    <span class="text">Comment</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="news_list-item">
-                    <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
-                        <div class="media">
-                            <picture>
-                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                            </picture>
-                            <span class="media_label">Tourist Guide</span>
-                        </div>
-                        <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >How to Get a Good Night’s Sleep in a Hostel</a
-                            >
-                            <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
-                            </p>
-                            <div class="main_metadata">
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-calendar icon"></i>
-                                    June 16, 2021
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-eye icon"></i>
-                                    <span class="number">120</span>
-                                    <span class="text">views</span>
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-comment icon"></i>
-                                    <span class="number">1</span>
-                                    <span class="text">Comment</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="news_list-item">
-                    <div class="item-wrapper d-sm-flex flex-lg-column flex-xl-row">
-                        <div class="media">
-                            <picture>
-                                <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                            </picture>
-                            <span class="media_label">Communication</span>
-                        </div>
-                        <div class="main d-sm-flex d-xl-block flex-column justify-content-between">
-                            <a class="main_title h4" href="post.html" data-shave="true"
-                                >Important Tips for Traveling with Friends</a
-                            >
-                            <p class="main_preview">
-                                Diam phasellus vestibulum lorem sed risus ultricies tristique. Mus mauris vitae ultricies leo
-                                integer malesuada nunc posuere
-                            </p>
-                            <div class="main_metadata">
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-calendar icon"></i>
-                                    June 16, 2021
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-eye icon"></i>
-                                    <span class="number">120</span>
-                                    <span class="text">views</span>
-                                </span>
-                                <span class="main_metadata-item d-inline-flex align-items-center">
-                                    <i class="icon-comment icon"></i>
-                                    <span class="number">1</span>
-                                    <span class="text">Comment</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                @endforeach
             </ul>
             <ul class="pagination d-flex align-items-center">
                 <li class="pagination-page">

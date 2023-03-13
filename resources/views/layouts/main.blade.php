@@ -12,21 +12,23 @@
         <link rel="stylesheet preload" as="style" href="{{ asset('css/preload.min.css')}}" />
         <link rel="stylesheet preload" as="style" href="{{ asset('css/icomoon.css')}}" />
         <link rel="stylesheet preload" as="style" href="{{ asset('css/libs.min.css')}}" />
+        
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+ 
         @yield('styles')
     </head>
     <body>
 <body>
-    
     {{-- include header --}}
     @include('partials.header')
-
+ 
     {{-- include content --}}
     @yield('content')
 
     {{-- include footer --}}
     @include('partials.footer')
 
-    @yield('scripts')
+    @yield('scripts') 
     <script src="{{ asset('js/common.min.js') }}"></script>    
     </body>
 </html>
