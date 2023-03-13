@@ -30,12 +30,25 @@ class NewsController extends Controller
 
     public function show($slug)
     {
+      $menuItems = [
+        [
+            'title' => 'Home',
+            'url' => '/',
+            'active' => false
+        ],
+        [
+            'title' => 'News',
+            'url' => '/news',
+            'active' => true
+        ]            
+    ];
+
         $dummyData = [
             'title' => "News Title $slug",
             'content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.'
         ];
 
-        return view('news.show', compact('dummyData'));
+        return view('news.show', compact('dummyData', 'menuItems'));
     }
 
 }

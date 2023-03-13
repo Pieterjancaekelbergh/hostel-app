@@ -35,75 +35,9 @@
                             <span class="text">Comments</span>
                         </a>
                     </div>
-                    <p class="post_main-article_text">
-                        Auctor neque vitae tempus quam pellentesque nec nam. Amet aliquam id diam maecenas ultricies mi eget mauris
-                        pharetra. Velit euismod in pellentesque massa placerat duis ultricies. Tempus egestas sed sed risus pretium
-                        quam. Nibh tortor id aliquet lectus proin nibh nisl condimentum id. Est velit egestas dui id ornare arcu
-                        odio ut. Nibh tellus molestie nunc non blandit massa enim nec dui. Dictum sit amet justo donec enim. Eget
-                        dolor morbi non arcu risus quis varius quam quisque. Accumsan in nisl nisi scelerisque eu ultrices vitae
-                        auctor.
-                    </p>
-                    <div class="post_main-article_gallery">
-                        <div class="gallery-item gallery-item--main media">
-                            <a class="link" href="{{ asset('img/placeholder.jpg') }}" data-role="gallery-link">
-                                <picture>
-                                    <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                    <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="gallery-item media">
-                            <a class="link" href="{{ asset('img/placeholder.jpg') }}" data-role="gallery-link">
-                                <picture>
-                                    <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                    <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                                </picture>
-                            </a>
-                        </div>
-                        <div class="gallery-item media">
-                            <a class="link" href="{{ asset('img/placeholder.jpg') }}" data-role="gallery-link">
-                                <picture>
-                                    <source data-srcset="{{ asset('img/placeholder.jpg') }}" srcset="{{ asset('img/placeholder.jpg') }}" />
-                                    <img class="lazy" data-src="{{ asset('img/placeholder.jpg') }}" src="{{ asset('img/placeholder.jpg') }}" alt="media" />
-                                </picture>
-                            </a>
-                        </div>
+                    <div class="post_main-article_text">
+                        {{ $post->content }}
                     </div>
-                    <p class="post_main-article_text">
-                        Auctor neque vitae tempus quam pellentesque nec nam. Amet aliquam id diam maecenas ultricies mi eget mauris
-                        pharetra. Velit euismod in pellentesque massa placerat duis ultricies. Tempus egestas sed sed risus pretium
-                        quam. Nibh tortor id aliquet lectus proin nibh nisl condimentum.
-                    </p>
-                    <div class="post_main-article_quote">
-                        <q class="quote">
-                            Nibh sed pulvinar proin gravida. Bibendum enim facilisis gravida neque convallis a cras semper. Bibendum
-                            est ultricies integer quis auctor. Est ante in nibh mauris
-                        </q>
-                        <span class="author">Daniel Terry</span>
-                    </div>
-                    <ul class="post_main-article_list">
-                        <li class="list-item d-flex align-items-center">
-                            <i class="icon-check icon"></i>
-                            Leo duis ut diam quam nulla porttitor
-                        </li>
-                        <li class="list-item d-flex align-items-center">
-                            <i class="icon-check icon"></i>
-                            Nullam vehicula ipsum a arcu cursus vitae
-                        </li>
-                        <li class="list-item d-flex align-items-center">
-                            <i class="icon-check icon"></i>
-                            Ultricies mi eget mauris pharetra et
-                        </li>
-                        <li class="list-item d-flex align-items-center">
-                            <i class="icon-check icon"></i>
-                            Dui faucibus in ornare quam viverra
-                        </li>
-                    </ul>
-                    <p class="post_main-article_text">
-                        Varius sit amet mattis vulputate. Cum sociis natoque penatibus et magnis dis. Quam elementum pulvinar etiam
-                        non quam lacus suspendisse. Eget gravida cum sociis natoque. Vitae tempus quam pellentesque nec nam aliquam
-                        sem. Lorem dolor sed viverra ipsum nunc aliquet.
-                    </p>
                 </div>
                 <div class="post_main-footer">
                     <div class="post_main-footer_tags d-flex flex-wrap align-items-center">
