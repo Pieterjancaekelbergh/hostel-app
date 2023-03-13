@@ -1,5 +1,5 @@
 <form action="{{ route('dashboard.posts.create') }}" method="POST">
-
+    @csrf
     <p>
         <label for="title">Title</label>
         <input type="text" name="title" id="title">
@@ -15,7 +15,11 @@
     <p>
         <label for="category">Category</label>
         <select name="category" id="category">
-            {{-- todo: iterate over categories --}}
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}">
+                {{ $category->name }}
+            </option>
+        @endforeach
             
         </select>
     </p>
