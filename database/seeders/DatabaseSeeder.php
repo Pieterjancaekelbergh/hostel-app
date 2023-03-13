@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,6 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Seed the posts table
+        // Post::factory(30)->create(); // create 30 posts
+
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
@@ -25,10 +30,11 @@ class DatabaseSeeder extends Seeder
         // Category::factory(10)->create();
 
         // create category ecommerce
-        Category::factory()->create([
-            'name' => 'Ecommerce',
-            'slug' => 'ecommerce',
-            'description' => 'Ecommerce category',
-        ]);
+        // Category::factory()->create([
+        //     'name' => 'Ecommerce',
+        //     'slug' => 'ecommerce',
+        //     'description' => 'Ecommerce category',
+        // ]);
+
     }
 }
