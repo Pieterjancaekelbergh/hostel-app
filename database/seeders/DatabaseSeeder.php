@@ -22,6 +22,13 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // seed database
-        Category::factory(10)->create();
+        // Category::factory(10)->create();
+
+        // create category ecommerce
+        Category::factory()->create([
+            'name' => 'Ecommerce',
+            'slug' => 'ecommerce',
+            'description' => 'Ecommerce category',
+        ]);
     }
 }
