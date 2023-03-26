@@ -13,6 +13,13 @@ class PageController extends Controller
         $menuItems = $this->menuItems;
         $menuItems[0]['active'] = true;
 
+        $post = Post::first(); // SELECT * FROM posts
+        
+        $tags = [1, 3];
+        // sync tags with post
+        $post->tags()->sync($tags);
+        
+
         $posts = Post::paginate(50); // SELECT * FROM posts
 
         return view('pages.home', compact('menuItems', 'posts'));
