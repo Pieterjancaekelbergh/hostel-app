@@ -2,7 +2,7 @@
 @extends('layouts/main')
 
 @section('styles')
-    <link rel="stylesheet" href="{{ asset('css/news.min.css')}}" />
+    @vite(['resources/scss/news.scss'])
 @endsection
 
 @section('content')

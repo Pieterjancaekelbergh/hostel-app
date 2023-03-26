@@ -10,38 +10,18 @@ class NewsController extends Controller
 
     public function index()
     {
-      $posts = Post::paginate(10); // SELECT * FROM posts
+        $menuItems = $this->menuItems;
+        $menuItems[1]['active'] = true;
 
-        $menuItems = [
-            [
-                'title' => 'Home',
-                'url' => '/',
-                'active' => false
-            ],
-            [
-                'title' => 'News',
-                'url' => '/news',
-                'active' => true
-            ]            
-        ];
-
+        $posts = Post::paginate(10); // SELECT * FROM posts
         return view('news.index', compact('posts', 'menuItems'));
     }
 
     public function show($slug)
     {
-      $menuItems = [
-        [
-            'title' => 'Home',
-            'url' => '/',
-            'active' => false
-        ],
-        [
-            'title' => 'News',
-            'url' => '/news',
-            'active' => true
-        ]            
-      ];
+      $menuItems = $this->menuItems;
+      $menuItems[1]['active'] = true;
+
 
       // get post from slug
       $post = Post::where('slug', $slug)->first();

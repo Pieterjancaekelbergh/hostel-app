@@ -10,6 +10,11 @@ use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
+    public function index() {
+        $posts = Post::paginate(10);
+        return view('dashboard.news.index', compact('posts'));
+    }
+
     public function create() {
         $categories = Category::all();
         return view('dashboard.news.create', compact('categories'));
@@ -26,5 +31,20 @@ class NewsController extends Controller
         $post->save();
 
         return redirect()->route('dashboard.posts.create');
+    }
+
+    public function edit() {
+        // todo
+        return 'todo';
+    }
+
+    public function update() {
+        // todo
+        return 'todo';
+    }
+
+    public function delete() {
+        // todo
+        return 'todo';
     }
 }

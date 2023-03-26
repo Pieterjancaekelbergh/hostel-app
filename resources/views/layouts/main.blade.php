@@ -9,12 +9,12 @@
         <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
         <script src="https://www.youtube.com/player_api"></script>
         
-        <link rel="stylesheet preload" as="style" href="{{ asset('css/preload.min.css')}}" />
-        <link rel="stylesheet preload" as="style" href="{{ asset('css/icomoon.css')}}" />
-        <link rel="stylesheet preload" as="style" href="{{ asset('css/libs.min.css')}}" />
-        
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
- 
+        @vite([
+            'resources/scss/preload.scss', 
+            'resources/css/icomoon.css', 
+            'resources/scss/libs.scss'
+        ])
+
         @yield('styles')
     </head>
     <body>
@@ -29,6 +29,10 @@
     @include('partials.footer')
 
     @yield('scripts') 
-    <script src="{{ asset('js/common.min.js') }}"></script>    
+
+    @vite([
+        'resources/js/common.js',
+        'resources/js/app.js'
+    ])
     </body>
 </html>
