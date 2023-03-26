@@ -2,7 +2,7 @@
 @extends('layouts/main')
 
 @section('styles')
-    @vite(['resources/scss/news.scss'])
+    @vite(['resources/scss/post.scss'])
 @endsection
 
 @section('content')
@@ -451,7 +451,5 @@
 @endsection
 
 @section('scripts')
-    <script>
-        console.log('Page specific script code goes here');
-    </script>
+    @vite(['resources/js/post.js'])
 @endsection

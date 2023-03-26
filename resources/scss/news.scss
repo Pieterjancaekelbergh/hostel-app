@@ -25,3 +25,19 @@
 @import "blocks/common/pagination";
 @import "blocks/common/footer";
 @import "blocks/common/modal";
+
+// import pagination styles from bootstrap
+$pagination-margin-start: 0;
+$pagination-border-width: 0;
+$pagination-border-radius: 0;
+
+// import breakpoint mixins
+@import "bootstrap/scss/_mixins";
+@import "bootstrap/scss/_functions";
+
+// import bootstrap variables
+@import "bootstrap/scss/_variables";
+
+$prefix: pagination;
+
+@import "bootstrap/scss/_pagination";
