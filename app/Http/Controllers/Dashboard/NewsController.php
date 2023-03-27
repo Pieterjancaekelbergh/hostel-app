@@ -47,15 +47,30 @@ class NewsController extends Controller
         return 'todo';
     }
 
-    public function update() {
-        // todo
-        return 'todo';
+    public function update(Post $post, Request $r) {
+        $validationRules = [
+            'title' => 'required|min:3|max:255',
+            'intro' => 'required',
+            'content' => 'required',
+            'category' => 'required|exists:categories,id'
+        ];
+
+        $r->validate($validationRules);
+
+        $post->title = $r->title;
+        $post->slug = Str::slug($r->title);
+        $post->intro = $r->intro;
+        $post->content = $r->content;
+        $post->category_id = $r->category;
+        $post->save();
+
+        return redirect()->route('dashboard.posts.index');
     }
 
     public function delete(Post $post) {
 
         $post->delete();
         return redirect()->route('dashboard.posts.index');
-        
+
     }
 }
