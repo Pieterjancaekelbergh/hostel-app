@@ -45,7 +45,7 @@ class NewsController extends Controller
 
     public function edit(Post $post) {
         $categories = Category::all();
-        return view('dashboard.news.create', compact('categories', 'post'));
+        return view('dashboard.news.edit', compact('categories', 'post'));
     }
 
     public function update(Post $post, Request $r) {

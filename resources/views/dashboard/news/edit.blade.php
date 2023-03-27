@@ -27,16 +27,12 @@
     
     <div class="mb-3">
         <label for="intro" class="form-label">Intro</label>
-        <textarea class="form-control" name="intro" id="intro" rows="10">
-            {{ old('intro') ? old('intro') : $post->intro }}
-        </textarea>
+        <textarea class="form-control" name="intro" id="intro" rows="10">{{ old('intro') ? old('intro') : $post->intro }}</textarea>
     </div>
     
     <div class="mb-3">
         <label for="content" class="form-label">Content</label>
-        <textarea class="form-control" name="content" id="content" rows="10">
-            {{ old('content') ? old('content') : $post->content }}
-        </textarea>
+        <textarea class="form-control" name="content" id="content" rows="10">{{ old('content') ? old('content') : $post->content }}</textarea>
     </div>
     
     <div class="mb-3">
