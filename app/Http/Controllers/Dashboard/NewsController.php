@@ -69,6 +69,7 @@ class NewsController extends Controller
     }
 
     public function update(Post $post, Request $r) {
+
         $validationRules = [
             'title' => 'required|min:3|max:255',
             'intro' => 'required',
@@ -83,6 +84,10 @@ class NewsController extends Controller
         $post->intro = $r->intro;
         $post->content = $r->content;
         $post->category_id = $r->category;
+        
+        // sync the tags with the post
+        $post->tags()->sync($r->tags);
+        
         $post->save();
 
         return redirect()->route('dashboard.posts.index');
