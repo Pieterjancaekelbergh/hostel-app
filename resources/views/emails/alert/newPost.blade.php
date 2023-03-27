@@ -1,7 +1,9 @@
 <x-mail::message>
-# Introduction
+# {{ $post['title'] }}
 
-The body of your message.
+{{ $post['content'] }}
+
+
 
 <x-mail::button :url="''">
 Button Text

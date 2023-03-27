@@ -21,7 +21,6 @@ class NewPostAlert extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-        //
     }
 
     /**
@@ -41,7 +40,9 @@ class NewPostAlert extends Mailable
     {
         return new Content(
             markdown: 'emails.alert.newPost',
-            with: $this->data
+            with: [
+                'post' => $this->data
+            ]
         );
     }
 
