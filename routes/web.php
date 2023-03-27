@@ -16,6 +16,9 @@ Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 
 // dashboard routes
 
+// test send mail route
+Route::get('/dashboard/mail', [DashboardNewsController::class, 'testSendMail'])->name('dashboard.testMail');
+
 // posts for news
 Route::get('/dashboard/posts', [DashboardNewsController::class, 'index'])->name('dashboard.posts.index');
 Route::get('/dashboard/posts/create', [DashboardNewsController::class, 'create'])->name('dashboard.posts.create');

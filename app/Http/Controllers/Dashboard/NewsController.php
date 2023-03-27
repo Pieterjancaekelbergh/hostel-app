@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewPostAlert;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
@@ -13,6 +15,21 @@ class NewsController extends Controller
     public function index() {
         $posts = Post::all();
         return view('dashboard.news.index', compact('posts'));
+    }
+
+    public function testSendMail() {
+        
+        $data = [
+            'title' => 'Hello from the other side',
+            'content' => 'I must have called a thousand times'
+        ];
+
+        Mail::to('bart.peeters@vrt.be')->send(
+            new NewPostAlert($data)
+        );
+
+        // show message to browser
+        return 'Mail sent';
     }
 
     public function create() {
