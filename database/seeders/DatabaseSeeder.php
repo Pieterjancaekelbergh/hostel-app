@@ -15,26 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Seed the posts table
-        // Post::factory(30)->create(); // create 30 posts
-
-
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
         // seed database
-        // Category::factory(10)->create();
+        Category::factory(10)->create();
 
-        // create category ecommerce
-        // Category::factory()->create([
-        //     'name' => 'Ecommerce',
-        //     'slug' => 'ecommerce',
-        //     'description' => 'Ecommerce category',
-        // ]);
+        // Seed the posts table
+        Post::factory(30)->create(); // create 30 posts
 
     }
 }

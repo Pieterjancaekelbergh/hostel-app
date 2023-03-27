@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class NewsController extends Controller
 {
     public function index() {
-        $posts = Post::paginate(10);
+        $posts = Post::all();
         return view('dashboard.news.index', compact('posts'));
     }
 
@@ -21,6 +21,15 @@ class NewsController extends Controller
     }
 
     public function store(Request $r) {
+
+        $validationRules = [
+            'title' => 'required|min:3|max:255',
+            'intro' => 'required',
+            'content' => 'required',
+            'category' => 'required|exists:categories,id'
+        ];
+
+        $r->validate($validationRules);
         
         $post = new Post();
         $post->title = $r->title;
