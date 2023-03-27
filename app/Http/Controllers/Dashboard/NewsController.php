@@ -52,8 +52,10 @@ class NewsController extends Controller
         return 'todo';
     }
 
-    public function delete() {
-        // todo
-        return 'todo';
+    public function delete(Post $post) {
+
+        $post->delete();
+        return redirect()->route('dashboard.posts.index');
+        
     }
 }

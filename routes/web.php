@@ -22,7 +22,7 @@ Route::get('/dashboard/posts/create', [DashboardNewsController::class, 'create']
 Route::post('/dashboard/posts/create', [DashboardNewsController::class, 'store'])->name('dashboard.posts.store');
 Route::get('/dashboard/posts/edit/{id}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
 Route::post('/dashboard/posts/edit/{id}', [DashboardNewsController::class, 'update'])->name('dashboard.posts.update');
-Route::delete('/dashboard/posts/delete', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
+Route::delete('/dashboard/posts/delete/{post}', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
 
 // categories for news (not working yet)
 Route::get('/dashboard/categories', [DashboardCategoriesController::class, 'index'])->name('dashboard.categories.index');
