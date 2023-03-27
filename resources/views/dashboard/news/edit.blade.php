@@ -34,6 +34,17 @@
         <label for="content" class="form-label">Content</label>
         <textarea class="form-control" name="content" id="content" rows="10">{{ old('content') ? old('content') : $post->content }}</textarea>
     </div>
+
+    <div class="mb-3">
+        <label for="tags">Tags: &nbsp;&nbsp;&nbsp;</label>
+        <!-- checkboxes per tag -->
+        @foreach ($tags as $tag)
+            <label>
+                <input type="checkbox" value="{{ $tag->id }}" name="tags[]" id="tags">
+                {{ $tag->name }}
+            </label>&nbsp;&nbsp;&nbsp;&nbsp;
+        @endforeach
+    </div>
     
     <div class="mb-3">
         <label for="category" class="form-label">Category</label>

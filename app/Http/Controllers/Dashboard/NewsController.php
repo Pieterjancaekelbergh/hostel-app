@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\NewPostAlert;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
@@ -62,7 +63,9 @@ class NewsController extends Controller
 
     public function edit(Post $post) {
         $categories = Category::all();
-        return view('dashboard.news.edit', compact('categories', 'post'));
+        $tags = Tag::all();
+
+        return view('dashboard.news.edit', compact('categories', 'post', 'tags'));
     }
 
     public function update(Post $post, Request $r) {
