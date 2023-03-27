@@ -20,7 +20,7 @@ Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 Route::get('/dashboard/posts', [DashboardNewsController::class, 'index'])->name('dashboard.posts.index');
 Route::get('/dashboard/posts/create', [DashboardNewsController::class, 'create'])->name('dashboard.posts.create');
 Route::post('/dashboard/posts/create', [DashboardNewsController::class, 'store'])->name('dashboard.posts.store');
-Route::get('/dashboard/posts/edit/{id}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
+Route::get('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
 Route::post('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'update'])->name('dashboard.posts.update');
 Route::delete('/dashboard/posts/delete/{post}', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
 

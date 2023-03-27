@@ -42,9 +42,9 @@ class NewsController extends Controller
         return redirect()->route('dashboard.posts.create');
     }
 
-    public function edit() {
-        // todo
-        return 'todo';
+    public function edit(Post $post) {
+        $categories = Category::all();
+        return view('dashboard.news.create', compact('categories', 'post'));
     }
 
     public function update(Post $post, Request $r) {
