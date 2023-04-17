@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class isAdmin
+class IsAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,6 +15,8 @@ class isAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // BLOCK THE REQUEST IF THE USER IS NOT AN ADMIN
+        
         return $next($request);
     }
 }
