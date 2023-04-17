@@ -51,6 +51,9 @@
                         </a>
                     </li>    
                     @endforeach
+                    <li>
+                        {{ Auth::user() ? Auth::user()->name : 'LOGIN'}}
+                    </li>
                 </ul>
             </nav>
             <ul class="socials d-flex align-items-center">

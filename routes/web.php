@@ -16,26 +16,27 @@ Route::get('/news', [NewsController::class, 'index'])->name('news.index');
 Route::get('/news/{slug}', [NewsController::class, 'show'])->name('news.show');
 
 // dashboard routes
+Route::middleware('auth', 'auth.isalmighty')->group(function () {
+    
+    // test send mail route
+    Route::get('/dashboard/mail', [DashboardNewsController::class, 'testSendMail'])->name('dashboard.testMail');
 
-// test send mail route
-Route::get('/dashboard/mail', [DashboardNewsController::class, 'testSendMail'])->name('dashboard.testMail');
+    // posts for news
+    Route::get('/dashboard/posts', [DashboardNewsController::class, 'index'])->name('dashboard.posts.index');
+    Route::get('/dashboard/posts/create', [DashboardNewsController::class, 'create'])->name('dashboard.posts.create');
+    Route::post('/dashboard/posts/create', [DashboardNewsController::class, 'store'])->name('dashboard.posts.store');
+    Route::get('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
+    Route::put('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'update'])->name('dashboard.posts.update');
+    Route::delete('/dashboard/posts/delete/{post}', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
 
-// posts for news
-Route::get('/dashboard/posts', [DashboardNewsController::class, 'index'])->name('dashboard.posts.index');
-Route::get('/dashboard/posts/create', [DashboardNewsController::class, 'create'])->name('dashboard.posts.create');
-Route::post('/dashboard/posts/create', [DashboardNewsController::class, 'store'])->name('dashboard.posts.store');
-Route::get('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
-Route::put('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'update'])->name('dashboard.posts.update');
-Route::delete('/dashboard/posts/delete/{post}', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
-
-// categories for news (not working yet)
-Route::get('/dashboard/categories', [DashboardCategoriesController::class, 'index'])->name('dashboard.categories.index');
-Route::get('/dashboard/categories/create', [DashboardCategoriesController::class, 'create'])->name('dashboard.categories.create');
-Route::post('/dashboard/categories/create', [DashboardCategoriesController::class, 'store'])->name('dashboard.categories.store');
-Route::get('/dashboard/categories/edit/{id}', [DashboardCategoriesController::class, 'edit'])->name('dashboard.categories.edit');
-Route::post('/dashboard/categories/edit/{id}', [DashboardCategoriesController::class, 'update'])->name('dashboard.categories.update');
-Route::delete('/dashboard/categories/delete', [DashboardCategoriesController::class, 'delete'])->name('dashboard.categories.delete');
-
+    // categories for news (not working yet)
+    Route::get('/dashboard/categories', [DashboardCategoriesController::class, 'index'])->name('dashboard.categories.index');
+    Route::get('/dashboard/categories/create', [DashboardCategoriesController::class, 'create'])->name('dashboard.categories.create');
+    Route::post('/dashboard/categories/create', [DashboardCategoriesController::class, 'store'])->name('dashboard.categories.store');
+    Route::get('/dashboard/categories/edit/{id}', [DashboardCategoriesController::class, 'edit'])->name('dashboard.categories.edit');
+    Route::post('/dashboard/categories/edit/{id}', [DashboardCategoriesController::class, 'update'])->name('dashboard.categories.update');
+    Route::delete('/dashboard/categories/delete', [DashboardCategoriesController::class, 'delete'])->name('dashboard.categories.delete');
+});
 
 
 Route::get('/dashboard', function () {
