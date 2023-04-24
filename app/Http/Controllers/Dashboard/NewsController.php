@@ -70,6 +70,8 @@ class NewsController extends Controller
 
     public function update(Post $post, Request $r) {
 
+        dd($r);
+        
         $validationRules = [
             'title' => 'required|min:3|max:255',
             'intro' => 'required',

@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 
 @section('content')
-<form action="{{ route('dashboard.posts.update', $post->id) }}" method="POST">
+<form enctype="multipart/form-data" action="{{ route('dashboard.posts.update', $post->id) }}" method="POST">
     @csrf
     @method('PUT')
 
@@ -65,7 +65,12 @@
     </div>
 
     <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Create article</button>
+        <label for="image">Image</label>
+        <input accept="image/*" type="file" class="form-control" name="image" id="image">
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Edit article</button>
     </div>
 </form>
 @endsection
