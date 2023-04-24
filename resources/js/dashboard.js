@@ -27,14 +27,16 @@ dropzone.on("error", function (file, response) {
 dropzone.on("removedfile", function (file) {
     const name = file._removeLink.dataset.name;
 
-    axios.delete('removeRoute', {
-        data: {
-            name: name
-        }
-    }).then(response => {
-        console.log(response);
-    }).catch(error => {
-        console.log(error);
-    };
+    axios
+        .delete("removeRoute", {
+            data: {
+                name: name,
+            },
+        })
+        .then((response) => {
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 });
-
