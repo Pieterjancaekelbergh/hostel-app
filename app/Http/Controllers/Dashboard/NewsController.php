@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class NewsController extends Controller
@@ -85,7 +86,13 @@ class NewsController extends Controller
             // move the file to the uploads folder
             $filePath = 'uploads/' . date('Y/m/');
             $fullPath = $filePath  . $fileName;
-            
+
+            $fileSystem = Storage::disk('public');
+            $fileSystem->putFileAs($filePath, $file, $fileName);
+
+            // save the path to the database
+            // dump for demonstration purposes
+            dd($fullPath);
         }
 
         $post->title = $r->title;
