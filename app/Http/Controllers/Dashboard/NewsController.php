@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostRequest;
 use App\Mail\NewPostAlert;
 use App\Models\Category;
 use App\Models\Post;
@@ -68,18 +69,15 @@ class NewsController extends Controller
         return view('dashboard.news.edit', compact('categories', 'post', 'tags'));
     }
 
-    public function update(Post $post, Request $r) {
+    public function update(Post $post, PostRequest $r) {
+        // validation happens at PostRequest level
 
-        dd($r);
-        
-        $validationRules = [
-            'title' => 'required|min:3|max:255',
-            'intro' => 'required',
-            'content' => 'required',
-            'category' => 'required|exists:categories,id'
-        ];
-
-        $r->validate($validationRules);
+        // validation passed, so we can save the post
+        // and handle the file upload
+        if ($r->hasFile('image')) {
+            $file = $r->image;
+            dd($file);
+        }
 
         $post->title = $r->title;
         $post->slug = Str::slug($r->title);
