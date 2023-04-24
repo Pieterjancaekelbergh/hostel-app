@@ -8,6 +8,8 @@
     {{-- link bootstrap cdn --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+
+    @vite(['resources/css/dashboard.css'])
 </head>
 <body>
     <div class="container">
@@ -30,5 +32,6 @@
             </div>
         </div>
     </div>    
+    @vite(['resources/js/dashboard.js'])
 </body>
 </html>
