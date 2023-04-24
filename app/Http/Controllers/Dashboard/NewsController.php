@@ -76,7 +76,16 @@ class NewsController extends Controller
         // and handle the file upload
         if ($r->hasFile('image')) {
             $file = $r->image;
-            dd($file);
+            // get extension of the file
+            $ext = $file->getClientOriginalExtension();
+
+            // generate a unique filename
+            $fileName = uniqid() . '.' . $ext;
+
+            // move the file to the uploads folder
+            $filePath = 'uploads/' . date('Y/m/');
+            $fullPath = $filePath  . $fileName;
+            
         }
 
         $post->title = $r->title;
