@@ -9,8 +9,15 @@ const dropzone = new Dropzone("#dragndrop", {
 });
 
 // basic events for dropzone
-dropzone.on("success", function (file, response) {});
+dropzone.on("success", function (file, response) {
+    console.log(response);
+    console.log(file);
+});
 
-dropzone.on("error", function (file, response) {});
+dropzone.on("error", function (file, response) {
+    alert(response.message);
+    // remove file from dropzone
+    dropzone.removeFile(file);
+});
 
 dropzone.on("removedfile", function (file) {});
