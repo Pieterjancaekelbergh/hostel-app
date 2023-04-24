@@ -80,7 +80,7 @@ class NewsController extends Controller
         // validation passed, so we can save the post
         // and handle the file upload
         if ($r->hasFile('image')) {
-            $this->uploadFile($r->image);
+            $imagePath = $this->uploadFile($r->image);
         }
 
         $post->title = $r->title;
@@ -88,6 +88,7 @@ class NewsController extends Controller
         $post->intro = $r->intro;
         $post->content = $r->content;
         $post->category_id = $r->category;
+        // $post->image = $imagePath;
         
         // sync the tags with the post
         $post->tags()->sync($r->tags);
