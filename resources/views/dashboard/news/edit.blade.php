@@ -73,4 +73,7 @@
         <button type="submit" class="btn btn-primary">Edit article</button>
     </div>
 </form>
+
+<form id="dragndrop" action="{{ route('api.upload.store') }}" class="dropzone"></form>
+
 @endsection
