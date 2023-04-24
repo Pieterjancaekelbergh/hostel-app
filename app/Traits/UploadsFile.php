@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 trait UploadsFile
 {
     public function uploadFile(UploadedFile $file, string $folder = null) : string {
-        $file = $r->image;
         // get extension of the file
         $ext = $file->getClientOriginalExtension();
 
