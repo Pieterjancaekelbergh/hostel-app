@@ -8,6 +8,7 @@ use App\Mail\NewPostAlert;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Traits\UploadsFile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,9 @@ use Illuminate\Support\Str;
 
 class NewsController extends Controller
 {
+
+    use UploadsFile;
+
     public function index() {
         $posts = Post::all();
         return view('dashboard.news.index', compact('posts'));
@@ -76,23 +80,7 @@ class NewsController extends Controller
         // validation passed, so we can save the post
         // and handle the file upload
         if ($r->hasFile('image')) {
-            $file = $r->image;
-            // get extension of the file
-            $ext = $file->getClientOriginalExtension();
-
-            // generate a unique filename
-            $fileName = uniqid() . '.' . $ext;
-
-            // move the file to the uploads folder
-            $filePath = 'uploads/' . date('Y/m/');
-            $fullPath = $filePath  . $fileName;
-
-            $fileSystem = Storage::disk('public');
-            $fileSystem->putFileAs($filePath, $file, $fileName);
-
-            // save the path to the database
-            // dump for demonstration purposes
-            dd($fullPath);
+            $this->uploadFile($r->image);
         }
 
         $post->title = $r->title;
