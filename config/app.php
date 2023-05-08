@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Mdi\Mdi;
 
 return [
 
@@ -195,7 +196,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
-
+        Darryldecode\Cart\CartServiceProvider::class
     ],
 
     /*
@@ -211,6 +212,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
+        'Mdi' => Mdi::class,
     ])->toArray(),
 
 ];

@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@googlemaps/js-api-loader": "^1.15.1",
+        "@mdi/svg": "^7.2.96",
         "aos": "^2.3.4",
         "baguettebox.js": "^1.11.1",
         "bootstrap": "^5.2.3",

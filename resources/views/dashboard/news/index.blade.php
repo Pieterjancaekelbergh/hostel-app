@@ -16,7 +16,10 @@
             <tr>
                 <th>ID</th>
                 <th>Title</th>
-                <th class="text-end">Actions</th>
+                <th>Actions</th>
+                <th class="text-end">
+                    {!! Mdi::mdi('cart') !!}
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +27,7 @@
                 <tr>
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>
-                    <td class="d-flex justify-content-end">
+                    <td class="d-flex">
                         {{-- btns --}}
                         <a href="{{ route('dashboard.posts.edit', $post->id) }}" class="btn btn-primary">Edit</a>
                         &nbsp;
@@ -32,6 +35,16 @@
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                    <td class="text-end">
+                        <form method="POST" action="{{ route('dashboard.cart.add') }}">
+                            @csrf
+                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-success">
+                                {!! Mdi::mdi('cart') !!} 
+                            </button>
                         </form>
                     </td>
                 </tr>

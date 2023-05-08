@@ -1,13 +1,16 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\NewsController as DashboardNewsController;
 use App\Http\Controllers\Dashboard\CategoriesController as DashboardCategoriesController;
 
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
 
+Route::post('/webhook/mollie', [WebhookController::class, 'handle'])->name('webhooks.mollie');
 
 Route::get('/', [PageController::class, 'home'])->name('pages.home');
 
@@ -28,6 +31,14 @@ Route::middleware('auth', 'auth.isalmighty')->group(function () {
     Route::get('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'edit'])->name('dashboard.posts.edit');
     Route::put('/dashboard/posts/edit/{post}', [DashboardNewsController::class, 'update'])->name('dashboard.posts.update');
     Route::delete('/dashboard/posts/delete/{post}', [DashboardNewsController::class, 'delete'])->name('dashboard.posts.delete');
+
+    Route::get('/dashboard/cart/index', [CartController::class, 'index'])->name('dashboard.cart.index');
+    Route::put('/dashboard/cart/index', [CartController::class, 'update'])->name('dashboard.cart.update');
+    Route::post('/dashboard/cart/add', [CartController::class, 'add'])->name('dashboard.cart.add');
+    Route::get('/dashboard/cart/clear', [CartController::class, 'clear'])->name('dashboard.cart.clear');
+    Route::get('/dashboard/cart/checkout', [CartController::class, 'checkout'])->name('dashboard.cart.checkout');
+
+    Route::get('/dashboard/cart/checkout/payment', [CartController::class, 'payment'])->name('dashboard.cart.payment');
 
     // categories for news (not working yet)
     Route::get('/dashboard/categories', [DashboardCategoriesController::class, 'index'])->name('dashboard.categories.index');

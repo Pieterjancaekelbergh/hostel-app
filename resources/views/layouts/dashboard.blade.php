@@ -25,6 +25,14 @@
                             <a class="nav-link" href="{{ route('dashboard.categories.index') }}">Categories</a>
                         </li>
                     </ul>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="" class="nav-link">
+                                {!! Mdi::mdi('Cart'); !!}
+                                Cart <span class="badge bg-danger">{{ \Cart::getContent()->count() }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </nav>
                 <hr>
 
