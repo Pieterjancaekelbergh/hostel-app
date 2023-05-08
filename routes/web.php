@@ -3,10 +3,18 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\NewsController as DashboardNewsController;
 use App\Http\Controllers\Dashboard\CategoriesController as DashboardCategoriesController;
-
+use App\Http\Controllers\MoneyController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\WebhookController;
 use Illuminate\Support\Facades\Route;
+
+Route::post('/webhooks/mollie', [WebhookController::class, 'mollie'])->name('webhooks.mollie');
+
+Route::get('/rich', [MoneyController::class, 'index'])->name('rich');
+Route::post('/rich', [MoneyController::class, 'earn'])->name('rich.earn');
+Route::get('/rich/thanks', [MoneyController::class, 'thanks'])->name('rich.thanks');
+
 
 
 Route::get('/', [PageController::class, 'home'])->name('pages.home');
